@@ -1,0 +1,8 @@
+print()
+len()
+type()
+int()
+float()
+str()
+bool()
+round()
