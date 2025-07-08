@@ -1,5 +1,6 @@
-#AuctionProgram
+# AuctionProgram
 import logo
+
 print(logo.auction_logo)
 print("Welcome to the secret auction program.")
 others = "yes"
@@ -8,8 +9,8 @@ while others == "yes":
     name = input("What is your name? ")
     bid_value = int(input("What is your bid? $"))
     others = input("Are there any other bidders? Type 'yes' or 'no': ").lower()
-    print("\n"*100)
-    
+    print("\n" * 100)
+
     bid[name] = bid_value
 
 max_bid = 0

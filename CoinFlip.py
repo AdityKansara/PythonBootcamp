@@ -1,8 +1,8 @@
-#CoinFlip
+# CoinFlip
 
 import random
 
-coin = random.randint(0,1)
+coin = random.randint(0, 1)
 
 if coin == 0:
     print("Heads")

@@ -1,4 +1,4 @@
-#Higher Lower game
+# Higher Lower game
 
 import logo
 import random
@@ -7,8 +7,11 @@ import data
 INSTALIST = data.higherLower_list
 score = 0
 B = random.choice(INSTALIST)
-def compare(A,B):
-    return 'A' if  A['followers'] > B['followers'] else 'B'
+
+
+def compare(A, B):
+    return "A" if A["followers"] > B["followers"] else "B"
+
 
 def higherLower():
     print(logo.higherLower_logo)
@@ -18,7 +21,7 @@ def higherLower():
         B = random.choice(INSTALIST)
         while B == A:
             B = random.choice(INSTALIST)
-        
+
         print("----------------------")
         print(f"{A['name']}")
         print(f"{A['desc']}")
@@ -33,12 +36,13 @@ def higherLower():
 
         ans = input("Who has more followers? 'A' or 'B': ").strip().upper()
 
-        compared = compare(A,B)
+        compared = compare(A, B)
         if ans == compared:
             score += 1
             print("Your Answer is correct!")
         else:
             print(f"Sorry that answer is wrong! \n Your total score is {score}")
             break
+
 
 higherLower()

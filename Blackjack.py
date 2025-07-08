@@ -1,21 +1,25 @@
-#BlackJack
+# BlackJack
 import random
 import logo
-cards = [11,2,3,4,5,6,7,8,9,10,10,10,10]
+
+cards = [11, 2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10]
+
 
 def deal():
     dealedCard = random.choice(cards)
     return dealedCard
 
+
 def calculateTotal(card):
-    if sum(card) == 21 and len(card)==2:
+    if sum(card) == 21 and len(card) == 2:
         return 0
-    if 11 in card and sum(card)>21:
+    if 11 in card and sum(card) > 21:
         card.remove(11)
         card.append(1)
     return sum(card)
 
-def compare(user,dealer):
+
+def compare(user, dealer):
     if user == dealer:
         print("It's a DRAW!")
     elif dealer == 0:
@@ -31,7 +35,8 @@ def compare(user,dealer):
     else:
         print("Delaer has higher card, you LOSE!")
 
-def play_game():        
+
+def play_game():
     print(logo.blackjack_logo)
     myDeal = []
     dealerDeal = []
@@ -63,8 +68,9 @@ def play_game():
 
     print(f"Your final cards were {myDeal} that totals to {userTotal}")
     print(f"Dealer's final cards were {dealerDeal} that totals to {dealerTotal}")
-    compare(userTotal,dealerTotal)
+    compare(userTotal, dealerTotal)
 
-while input("Do you want to play blackjack game?")== "y":
-    print("\n"*10)
+
+while input("Do you want to play blackjack game?") == "y":
+    print("\n" * 10)
     play_game()
