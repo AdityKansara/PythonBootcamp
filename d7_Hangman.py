@@ -1,9 +1,10 @@
 #Hangman
-import d7_HangmanWords
+import data
+import logo
 import random
 
-print(d7_HangmanWords.hangman_logo)
-current_word = random.choice(d7_HangmanWords.word_list)
+print(logo.hangman_logo)
+current_word = random.choice(data.word_list)
 
 final_word = "_"*len(current_word)
 print(final_word)
@@ -30,7 +31,7 @@ while not gameOver:
             display_word+= "_"
 
     print(display_word)
-    print(d7_HangmanWords.hanglist[lives])
+    print(logo.hanglist[lives])
     print(f"******************* {lives} LIVES LEFT********************")
     
     if "_" not in display_word:
