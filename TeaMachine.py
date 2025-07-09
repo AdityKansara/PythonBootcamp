@@ -23,12 +23,15 @@ def check_stock(index):
     print("Checking Stock")
     keys = list(INITIAL_STOCK.keys())
 
-    for item in keys[:3]:
-        if MENU[index]["ingredients"][item] <= INITIAL_STOCK[item]:
-            INITIAL_STOCK[item] -= MENU[index]["ingredients"][item]
-        else:
+    for item in MENU[index]["ingredients"]:
+        if MENU[index]["ingredients"][item] > INITIAL_STOCK[item]:
             print(f"OOPS! Not enough {item} in the machine!🫙")
             return False
+
+    for item in MENU[index]["ingredients"]:
+            INITIAL_STOCK[item] -= MENU[index]["ingredients"][item]
+            
+    return True
 
 
 def calculate_money(index, totalMoney):
@@ -63,25 +66,48 @@ def change(amount):
     print(f"Here is your change...₹{amount}")
     print("Enjoy you tea!")
 
+def report():
+    print("==============REPORT==============")
+    print(f"Water : {INITIAL_STOCK['water']}ml")
+    print(f"Milk : {INITIAL_STOCK['milk']}ml")
+    print(f"Tea : {INITIAL_STOCK['tea']}g")
+    print(f"Money : {INITIAL_STOCK['money']}₹")
+    print("==================================")
 
-print(logo.Tea_logo)
-choice = (
-    input(
-        "What would you like to have?\nGinger Tea 🫚 ☕\nBlack Tea ☕🖤\nMilk Tea 🧋\n"
-    )
-    .strip()
-    .lower()
-)
-index = get_index(choice)
-print(f"your index {index}")
-check_stock(index)
+def adiCafe():
+    print(logo.Tea_logo)
+    while True:
+        choice = (
+            input(
+                "What would you like to have?\nGinger Tea 🫚 ☕\nBlack Tea ☕🖤\nMilk Tea 🧋\n"
+            )
+            .strip()
+            .lower()
+        )
+        if choice == "report":
+            report()
+            continue
+        
+        index = get_index(choice)
+        if index == -1:
+            print("We don't serve that. Please check the spelling 🍵")
+            continue
+        if check_stock(index):
 
-print("Please insert coins!")
-rs10 = int(input("How many 10₹ ?"))
-rs5 = int(input("How many 5₹ ?"))
-rs2 = int(input("How many 2₹ ?"))
-rs1 = int(input("How many 1₹  ?"))
+            print(f"Please insert ₹{MENU[index]["price"]} or more in coins!")
+            rs10 = int(input("How many 10₹ ?"))
+            rs5 = int(input("How many 5₹ ?"))
+            rs2 = int(input("How many 2₹ ?"))
+            rs1 = int(input("How many 1₹  ?"))
 
-totalMoney = rs1 + (rs2 * 2) + (rs5 * 5) + (rs10 * 10)
+            totalMoney = rs1 + (rs2 * 2) + (rs5 * 5) + (rs10 * 10)
 
-calculate_money(index, totalMoney)
+            calculate_money(index, totalMoney)
+
+        more = input("Do you want to order again? ['y'/'n']").strip().lower()
+
+        if more != 'y':
+            print("Thank you! Visit Again!!")
+            break
+
+adiCafe()
