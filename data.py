@@ -42,29 +42,29 @@ higherLower_list = [
 
 Tea_Menu = [
     {
-        "name": "Ginger Tea",
+        "name": "ginger tea",
         "price": 45,
         "ingredients": {
             "milk": 100,
-            "tea": 25,
-            "water": 30,
+            "tea": 37,
+            "water": 50,
         },
     },
     {
-        "name": "Black Tea",
+        "name": "black tea",
         "price": 15,
         "ingredients": {
             "milk": 0,
-            "tea": 25,
+            "tea": 42,
             "water": 120,
         },
     },
     {
-        "name": "Milk Tea",
-        "price": 100,
+        "name": "milk tea",
+        "price": 80,
         "ingredients": {
-            "milk": 150,
-            "tea": 25,
+            "milk": 250,
+            "tea": 22,
             "water": 10,
         },
     },
