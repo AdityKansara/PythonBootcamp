@@ -91,3 +91,4 @@ quiz_questions = [
     {"text": "Penguins can fly.", "answer": "False"},
     {"text": "Humans share about 98% of their DNA with chimpanzees.", "answer": "True"},
 ]
+turtle_colors = ["red", "blue", "yellow", "black", "cyan", "blue4", "SeaGreen"]
