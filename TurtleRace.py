@@ -53,4 +53,5 @@ while race:
                 print(f"You win! Winner is {winner}")
             else:
                 print(f"You lose! Winner is {winner}")
+            break
 s.exitonclick()
