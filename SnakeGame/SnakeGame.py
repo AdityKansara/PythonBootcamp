@@ -38,7 +38,7 @@ while gameOn:
     # ===== Hit the wall
     if not (-290 <= x <= 290 and -290 <= y <= 270):
         gameOn = False
-    
+
     # =====Hit the tail
     for bodyPart in snaky.snakeBody[1:]:
         if bodyPart.distance(snaky.snakeHead) < 10:

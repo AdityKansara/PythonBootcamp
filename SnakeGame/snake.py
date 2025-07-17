@@ -14,8 +14,8 @@ class Snake:
         self.snakeBody = []
         self.createSnake()
         self.snakeHead = self.snakeBody[0]
-    
-    def addBody(self,position):
+
+    def addBody(self, position):
         snaky = Turtle("square")
         snaky.color("white")
         snaky.penup()
@@ -25,7 +25,7 @@ class Snake:
     def createSnake(self):
         for pos in START_POS:
             self.addBody(pos)
-    
+
     def extendSnake(self):
         self.addBody(self.snakeBody[-1].position())
 

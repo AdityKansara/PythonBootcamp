@@ -10,7 +10,7 @@ class Food(Turtle):
         self.color("pink")
         self.penup()
         self.refresh()
-    
+
     def refresh(self):
         x = random.randint(-260, 260)
         y = random.randint(-260, 260)
