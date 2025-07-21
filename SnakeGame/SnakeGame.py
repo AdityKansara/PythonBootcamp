@@ -37,12 +37,13 @@ while gameOn:
 
     # ===== Hit the wall
     if not (-290 <= x <= 290 and -290 <= y <= 270):
-        gameOn = False
+        score.reset()
+        snaky.reset()
 
     # =====Hit the tail
     for bodyPart in snaky.snakeBody[1:]:
         if bodyPart.distance(snaky.snakeHead) < 10:
-            gameOn = False
+            score.reset()
+            snaky.reset()
 
-score.gameOver()
 s.exitonclick()

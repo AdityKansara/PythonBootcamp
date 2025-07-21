@@ -8,6 +8,7 @@ class Score(Turtle):
     def __init__(self):
         super().__init__()
         self.score = 0
+        self.highestScore = 0
         self.color("white")
         self.hideturtle()
         self.penup()
@@ -19,10 +20,14 @@ class Score(Turtle):
         self.score += 1
 
     def displayScore(self):
+        self.clear()
         self.write(
-            f"Game Roshi - The SNAKE\tScore: {self.score}", align=ALIGN, font=FONT
+            f"The SNAKE\tScore: {self.score} High Score: {self.highestScore}", align=ALIGN, font=FONT
         )
-
-    def gameOver(self):
-        self.goto(0, 0)
-        self.write(f"HAHAHA, Chal Nikkal!!!!", align=ALIGN, font=FONT)
+    
+    def reset(self):
+        if self.score > self.highestScore:
+            self.highestScore = self.score
+        
+        self.score = 0
+        self.displayScore()
