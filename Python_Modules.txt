@@ -2,3 +2,6 @@ random
 math
 turtle
 prettytable
+time
+csv
+pandas

@@ -4,7 +4,6 @@ from turtle import Screen
 from score import Score
 from food import Food
 from snake import Snake
-import time
 
 s = Screen()
 s.setup(600, 600)

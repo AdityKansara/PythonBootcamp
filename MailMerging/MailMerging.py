@@ -4,12 +4,10 @@ with open("./Friends.txt", "r") as nameFile:
     names = name.splitlines()
 
 with open("./Letter.txt", "r") as letterFile:
-    lines = letterFile.readlines()
+    lines = letterFile.read()
 
-    for eachName in names:
-            linesplit = lines[0].split(" ")
-            linesplit[1] = f"{eachName}!"
-            newLine = " ".join(linesplit)+ "\n"
-            newLetterLines = [newLine] + lines[1:]
-            with open(f"{eachName}.txt", "w") as tmpFile:
-                tmpFile.writelines(newLetterLines)
+for eachName in names:
+    personalized = lines.replace("[name]", eachName)
+
+    with open(f"{eachName}.txt", "w") as tmpFile:
+        tmpFile.writelines(personalized)

@@ -29,8 +29,8 @@ def check_stock(index):
             return False
 
     for item in MENU[index]["ingredients"]:
-            INITIAL_STOCK[item] -= MENU[index]["ingredients"][item]
-            
+        INITIAL_STOCK[item] -= MENU[index]["ingredients"][item]
+
     return True
 
 
@@ -66,6 +66,7 @@ def change(amount):
     print(f"Here is your change...₹{amount}")
     print("Enjoy you tea!")
 
+
 def report():
     print("==============REPORT==============")
     print(f"Water : {INITIAL_STOCK['water']}ml")
@@ -73,6 +74,7 @@ def report():
     print(f"Tea : {INITIAL_STOCK['tea']}g")
     print(f"Money : {INITIAL_STOCK['money']}₹")
     print("==================================")
+
 
 def adiCafe():
     print(logo.Tea_logo)
@@ -87,7 +89,7 @@ def adiCafe():
         if choice == "report":
             report()
             continue
-        
+
         index = get_index(choice)
         if index == -1:
             print("We don't serve that. Please check the spelling 🍵")
@@ -106,8 +108,9 @@ def adiCafe():
 
         more = input("Do you want to order again? ['y'/'n']").strip().lower()
 
-        if more != 'y':
+        if more != "y":
             print("Thank you! Visit Again!!")
             break
+
 
 adiCafe()

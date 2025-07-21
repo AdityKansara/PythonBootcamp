@@ -24,10 +24,11 @@ def rgt():
     tom.right(10)
     tom.forward(10)
 
+
 def clear():
     tom.home()
     tom.clear()
-    
+
 
 s.listen()
 s.onkey(key="w", fun=fwd)

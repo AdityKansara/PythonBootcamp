@@ -23,17 +23,18 @@ def drawLine():
     centerLine.pendown()
     centerLine.goto(0, -HALFY)
 
+
 def drawRectangle():
     centerLine = Turtle()
     centerLine.hideturtle()
     centerLine.penup()
     centerLine.color("white")
-    centerLine.goto(HALFX,HALFY)
+    centerLine.goto(HALFX, HALFY)
     centerLine.pendown()
-    centerLine.goto(HALFX,-HALFY)
-    centerLine.goto(-HALFX,-HALFY)
-    centerLine.goto(-HALFX,HALFY)
-    centerLine.goto(HALFX,HALFY)
+    centerLine.goto(HALFX, -HALFY)
+    centerLine.goto(-HALFX, -HALFY)
+    centerLine.goto(-HALFX, HALFY)
+    centerLine.goto(HALFX, HALFY)
 
 
 s = Screen()

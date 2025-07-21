@@ -16,15 +16,13 @@ class Player(Turtle):
 
     def moveup(self):
         self.forward(MOVE_SPEED)
-    
+
     def gotoStart(self):
         self.goto(START_POS)
-    
+
     def isAtFinishLine(self):
         if self.ycor() >= 300:
             self.gotoStart()
             return True
         else:
             return False
-    
-

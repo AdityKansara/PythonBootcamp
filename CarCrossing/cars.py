@@ -28,7 +28,7 @@ class Cars:
     def moveCar(self):
         for car in self.all_cars:
             car.forward(self.speed)
-    
+
     def speedUp(self):
         self.speed += MOVE_INCREMENT
 

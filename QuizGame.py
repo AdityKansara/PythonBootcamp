@@ -1,5 +1,5 @@
-#QuizGame
-#Use opentdb.com for more trivia qustions
+# QuizGame
+# Use opentdb.com for more trivia qustions
 class Question:
     def __init__(self, text, answer):
         self.text = text
