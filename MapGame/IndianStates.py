@@ -47,12 +47,7 @@ while not allStates:
     if len(correctAns) == 36:
         allStates = True
 
-remaining = []
-for ans in stateNames:
-    if ans in correctAns:
-        continue
-    else:
-        remaining.append(ans)
+remaining = [s for s in stateNames if s not in correctAns]
 newData = p.DataFrame(remaining)
 newData.to_csv("RemainingStates.csv")
 s.exitonclick()
