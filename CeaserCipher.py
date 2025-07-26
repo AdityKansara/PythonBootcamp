@@ -1,5 +1,5 @@
 # CaeserCipher
-import logo
+from Resources import logo
 
 print(logo.caesercipher_logo)
 

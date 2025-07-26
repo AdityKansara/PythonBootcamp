@@ -1,5 +1,5 @@
 # AuctionProgram
-import logo
+from Resources import logo
 
 print(logo.auction_logo)
 print("Welcome to the secret auction program.")

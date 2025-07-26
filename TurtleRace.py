@@ -2,7 +2,7 @@
 
 from turtle import Screen, Turtle
 import turtle
-from data import turtle_colors
+from Resources.data import turtle_colors
 import random
 
 turtle_list = []

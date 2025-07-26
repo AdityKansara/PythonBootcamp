@@ -1,6 +1,6 @@
 import pandas as pd
 
-data = pd.read_csv("Squirrel_Data.csv")
+data = pd.read_csv("Resources/Squirrel_Data.csv")
 grey_squirrel = len(data[data["Primary Fur Color"] == "Gray"])
 red_squirrel = len(data[data["Primary Fur Color"] == "Cinnamon"])
 black_squirrel = len(data[data["Primary Fur Color"] == "Black"])
@@ -15,4 +15,4 @@ datadict = {
 }
 
 df = pd.DataFrame(datadict)
-df.to_csv("SquirrelCount.csv")
+df.to_csv("Outputs/SquirrelCount.csv")

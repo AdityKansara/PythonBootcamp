@@ -1,8 +1,7 @@
 # Higher Lower game
 
-import logo
 import random
-import data
+from Resources import data, logo
 
 INSTALIST = data.higherLower_list
 score = 0

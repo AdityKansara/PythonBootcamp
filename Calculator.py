@@ -1,5 +1,5 @@
 # Calculator
-import logo
+from Resources import logo
 
 
 def sum(num1, num2):

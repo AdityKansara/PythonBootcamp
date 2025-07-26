@@ -18,11 +18,11 @@ def createName(state, x, y):
     name.write(state)
 
 
-data = p.read_csv("IndianStates.csv")
+data = p.read_csv("Resources/IndianStates.csv")
 
 s = turtle.Screen()
 s.title("Indian States Game")
-img = "IndiaMap.gif"
+img = "Resources/IndiaMap.gif"
 s.addshape(img)
 turtle.shape(img)
 
@@ -49,5 +49,5 @@ while not allStates:
 
 remaining = [s for s in stateNames if s not in correctAns]
 newData = p.DataFrame(remaining)
-newData.to_csv("RemainingStates.csv")
+newData.to_csv("Outputs/RemainingStates.csv")
 s.exitonclick()

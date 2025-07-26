@@ -1,7 +1,7 @@
 # Shapes
 from turtle import Screen, Turtle
 import random
-from data import turtle_colors
+from Resources.data import turtle_colors
 
 shree = Turtle()
 shree.shape("turtle")

@@ -1,5 +1,4 @@
 from turtle import Screen, Turtle
-import turtle
 
 tom = Turtle()
 tom.shape("arrow")

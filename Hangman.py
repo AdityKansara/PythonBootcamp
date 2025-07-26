@@ -1,6 +1,5 @@
 # Hangman
-import data
-import logo
+from Resources import data, logo
 import random
 
 print(logo.hangman_logo)

@@ -1,6 +1,5 @@
 # CoffeeMachine
-import logo
-import data
+from Resources import data, logo
 
 MENU = data.Tea_Menu
 INITIAL_STOCK = {"milk": 500, "tea": 100, "water": 200, "money": 0}

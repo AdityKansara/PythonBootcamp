@@ -9,7 +9,7 @@ class Score(Turtle):
         super().__init__()
         self.score = 0
         self.highestScore = 0
-        with open("HighScore.txt", "r") as hFile:
+        with open("Resources/HighScore.txt", "r") as hFile:
             self.highestScore = int(hFile.read())
         self.color("white")
         self.hideturtle()
@@ -33,7 +33,7 @@ class Score(Turtle):
         if self.score > self.highestScore:
             self.highestScore = self.score
 
-        with open("HighScore.txt", "w") as hFile:
+        with open("Resources/HighScore.txt", "w") as hFile:
             hFile.write(str(self.highestScore))
 
         self.score = 0

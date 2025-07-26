@@ -6,7 +6,7 @@ import colorgram
 import random
 
 turtle.colormode(255)
-img = "beginnerPackage//image.jpeg"
+img = "Resources//HirstPainting.jpeg"
 colorPallete = colorgram.extract(img, 50)
 
 

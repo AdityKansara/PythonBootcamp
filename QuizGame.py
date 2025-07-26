@@ -34,11 +34,11 @@ class QuizBrain:
 
 
 # ----------------------------------------------------------------------------
-from data import quiz_questions
+from Resources import data
 
 question_bank = []
 
-for item in quiz_questions:
+for item in data.quiz_questions:
     question_bank.append(Question(item["text"], item["answer"]))
 
 q = QuizBrain(question_bank)

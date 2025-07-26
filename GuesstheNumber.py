@@ -1,6 +1,6 @@
 # Guess the Number
 import random
-import logo
+from Resources import logo
 
 print(logo.guessinggame_logo)
 print("Welcome to Guess the Number Game!")
