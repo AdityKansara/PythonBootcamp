@@ -4,8 +4,8 @@
 ### 1. Clone the Repo
 
 ```bash
-git clone https://github.com/AdityKansara/PythonBootcamp.git
-cd PythonBootcamp
+git clone https://github.com/AdityKansara/PythonforBeginners.git
+cd PythonforBeginners
 ```
 
 ### 2. Run Any Project
@@ -16,7 +16,7 @@ Open a `.py` file in your code editor (like VSCode, PyCharm, or Thonny), or run 
 python d14_HigherLower.py
 ```
 
-Make sure to run each project from the folder where `data.py`, `logo.py`, etc. are located if they’re used in that project.
+Make sure to run each project from the folder `PythonforBeginners`.
 
 ---
 
