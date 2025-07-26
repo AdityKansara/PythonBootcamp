@@ -3,6 +3,7 @@ from tkinter import *
 from tkinter import messagebox
 from PIL import ImageTk, Image
 from Resources.data import letters, nums, special
+from beginnerPackage import pyperclip
 
 
 CREME = "#EBD4D0"
@@ -25,6 +26,8 @@ def generatePwd():
     generated_password = letter + num + sp
     shuffle(generated_password)
     final_pwd = "".join(generated_password)
+    pyperclip.copy(final_pwd)
+    pyperclip.paste()
     ptxt.insert(index=0, string=final_pwd)
 
 
