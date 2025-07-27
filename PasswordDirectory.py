@@ -1,19 +1,45 @@
-from random import choice, randint, random, shuffle
+from random import choice, randint, shuffle
 from tkinter import *
 from tkinter import messagebox
 from PIL import ImageTk, Image
 from Resources.data import letters, nums, special
 from beginnerPackage import pyperclip
-
+import json
 
 CREME = "#EBD4D0"
 RED = "#AF3E3E"
 FONT_NAME = "Segoe UI"
+SECRETS_PATH = "Outputs/secrets.json"
+
+
+def searchPwd():
+    website = wtxt.get()
+    if website:
+        try:
+            with open(file=SECRETS_PATH, mode="r") as f:
+                secrets = json.load(f)
+        except (FileNotFoundError, json.JSONDecodeError):
+            messagebox.showinfo(
+                title=" Password Generator ",
+                message=f"Credential File does not exist",
+            )
+            return
+
+        if website in secrets:
+            messagebox.showinfo(
+                title=" Password Generator ",
+                message=f"Your credentials for {website} is..\n email = {secrets[website]["email"]}\n password = {secrets[website]["password"]}",
+            )
+        else:
+            messagebox.showinfo(
+                title=" Password Generator ",
+                message=f"Credentials for {website} does not exist.",
+            )
 
 
 def clear_fields():
     wtxt.delete(0, END)
-    etxt.delete(0, END)
+    # etxt.delete(0, END)
     ptxt.delete(0, END)
 
 
@@ -35,16 +61,31 @@ def savePwd():
     email = etxt.get()
     password = ptxt.get()
 
+    newSecrets = {
+        website: {
+            "email": email,
+            "password": password,
+        }
+    }
+
     if website and email and password:
         ans = messagebox.askyesno(
             title=" Password Generator ",
-            message=f"Website: {website}\nEmail: {email}\nPassword: {password}\nAre these value correct?",
+            message=f"Website: {website}\nEmail: {email}\nPassword: {password}\n\nAre these value correct?",
             default="yes",
         )
         if ans:
-            with open(file="Outputs/secrets.txt", mode="a") as f:
-                f.write(f"{website} | {email} | {password}\n")
+            try:
+                with open(file=SECRETS_PATH, mode="r") as f:
+                    secrets = json.load(f)
+            except FileNotFoundError:
+                secrets = {}
+            secrets.update(newSecrets)
+            with open(file=SECRETS_PATH, mode="w") as f:
+                json.dump(secrets, f, indent=4)
                 clear_fields()
+            messagebox.showinfo("Success", "Credentials saved successfully!")
+
     else:
         messagebox.showerror(
             " Password Generator ", "Enter Every Field before proceeding!"
@@ -66,9 +107,11 @@ canvas.grid(column=1, row=1, columnspan=3)
 
 websiteLbl = Label(text=" Website: ", font=(FONT_NAME, 10, "bold"), bg=CREME, fg=RED)
 websiteLbl.grid(column=1, row=2)
-wtxt = Entry(width=80)
-wtxt.grid(column=2, row=2, pady=20, columnspan=2)
+wtxt = Entry(width=35)
+wtxt.grid(column=2, row=2, pady=20)
 wtxt.focus()
+sbtn = Button(text="Search", width=35, command=searchPwd)
+sbtn.grid(column=3, row=2, pady=20)
 
 emailLbl = Label(text=" Email: ", font=(FONT_NAME, 10, "bold"), bg=CREME, fg=RED)
 emailLbl.grid(column=1, row=3)
