@@ -27,7 +27,6 @@ def generatePwd():
     shuffle(generated_password)
     final_pwd = "".join(generated_password)
     pyperclip.copy(final_pwd)
-    pyperclip.paste()
     ptxt.insert(index=0, string=final_pwd)
 
 
