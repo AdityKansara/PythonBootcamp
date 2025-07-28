@@ -8,3 +8,4 @@ pandas
 tkinter
 smtplib
 datetime
+requests
