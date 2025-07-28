@@ -6,3 +6,5 @@ time
 csv
 pandas
 tkinter
+smtplib
+datetime
